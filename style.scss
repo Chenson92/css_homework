@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "./animation.scss";
+
+:root {
+  --main-desktop-font-size: 24px;
+  --main-pad-font-size: calc(var(--main-desktop-font-size) * 4.8 / 6);
+  /* --main-phone-font-size: 15px; */
+  --main-background-color: #333;
+  --main-text-color: #fff;
+  --main-color: #03a8f4;
+  --main-desktop-border-color: #111;
+  --header-toggle-width: 30px;
+  --header-toggle-pad-width: calc(var(--header-toggle-width) * 5 / 6);
+  --screen-desktop-padding-top-bottom: 50px;
+  --screen-desktop-padding-left-right: 100px;
+  --screen-pad-padding-top-bottom: 10px;
+  --screen-pad-padding-left-right: 30px;
+  --footer-icon-with: 30px;
+  --footer-icon-pad-with: calc(var(--footer-icon-with) * 5 /6); --text-description-h1-desktop-size: 3rem;
+  --text-description-h2-desktop-size: 2.5rem;
+  --text-description-p-desktop-size: 1rem;
+
+  --text-description-h1-pad-size: 2.5rem;
+  --text-description-h2-pad-size: 2rem;
+  --text-description-p-pad-size: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+html, body {
+    all:unset;
+    width: 100dvw;/* based on device, it would change*/
+    min-height:100dvh;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--main-desktop-font-size);
+    background-color:var( --main-background-color) ;
+    color:var(--main-text-color);
+}
+
+a {
+    color: var(--main-text-color);
+}
+
+section {
+    &.main-structure{
+
+        display:flex;
+        min-height: 100dvh; 
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: var(--screen-desktop-padding-top-bottom) var(--screen-desktop-padding-left-right);
+           
+        header,
+        footer,
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           // border: 5px dashed var(--main-desktop-border-color);
+           
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            .menu-logo{
+                background-image: url("/src/icons/menu.svg");
+                width:var(--header-toggle-width);
+                aspect-ratio: 1/1;
+                background-size: var(--header-toggle-width);
+                background-repeat: no-repeat;
+                background-position: center;
+                filter:invert(1);/* change color of icon */
+            }
+    }
+
+    .content {
+       justify-content: flex-start;
+        video {
+            position:absolute;
+            inset: 0; /* top:0; left, right, bottom:0*/
+            height:100%;
+            width:100%;
+            object-fit:cover;
+            z-index:-1;
+        }
+        .text-description{
+            h1{
+              font-size: var(--text-description-h1-desktop-size);
+              line-height: 1em;
+            }
+
+            h2{ 
+              font-size: var(--text-description-h2-desktop-size);
+              line-height: 1em;
+            }
+            p{
+             font-size: var(--text-description-p-desktop-size);
+             line-height: 1.5em;
+             max-width:700px;
+             min-width:400px;
+             margin:3em 0;
+            }
+
+            .btn {
+             font-size: 20px;
+             border:2px solid var(--main-text-color);
+             line-height:1em ;
+             padding:10px 30px;
+             border-radius: 30px;
+             //box-shadow: 1px 1px 8px rgba(0,0,0,0.3), -1px -1px 8px rgba(255, 255, 255, 0.3);//
+             &:hover {
+                background-color: var(--main-color);
+                box-shadow: none;
+                letter-spacing: 5px;
+             }
+             &:active{
+              background-color: #111;
+              letter-spacing: 5px;
+              box-shadow:none;
+             }
+            }
+        }
+    }
+    footer{
+       justify-content: flex-start;
+       gap:30px;
+       a{
+        img{
+            filter: invert(1);
+            width:var(--footer-icon-with);
+            
+        }
+
+        &:nth-child(1){
+            animation-delay:0.3s;
+        }
+
+        &:nth-child(2){
+            animation-delay:0.6s;
+        }
+
+        &:nth-child(3){
+            animation-delay:0.9s;
+        }
+       // padding-right: 30px;
+       // &:last-child:0;
+
+       }
+
+     
+
+    }
+}
+
+
+
+}
