@@ -83,6 +83,25 @@ section {
                 background-repeat: no-repeat;
                 background-position: center;
                 filter:invert(1);/* change color of icon */
+
+                @media (width > 1200px) {
+                    display: none;
+                  }
+            }
+            .menu {
+                display: flex;
+                @media (width < 1200px){
+                    display:none;
+                }
+            }
+            .menu_1{
+                padding: 1rem;
+            }
+            .menu_2{
+                padding: 1rem;
+            }
+            .menu_3{
+                padding: 1rem;
             }
     }
 
